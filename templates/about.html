@@ -1,0 +1,111 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+<style>
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  margin-right:5rem;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #142027;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+  float:right;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: #9c63bf;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #9c63bf;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="about-section">
+  <h1>About Us</h1>
+  <p>Voizfonica is India's leading telecom service provider. The Company provides pan India Voice and Data services across 2G, 3G and 4G platform. With the large spectrum portfolio to support the growing demand for data and voice, the company is committed to deliver delightful customer experiences and contribute towards creating a truly 'Digital India' by enabling millions of citizens to connect and build a better tomorrow. The Company is developing infrastructure to introduce newer and smarter technologies, making both retail and enterprise customers future ready with innovative offerings, conveniently accessible through an ecosystem of digital channels as well as extensive on-ground presence. The Company is listed on National Stock Exchange (NSE) and Bombay Stock Exchange (BSE) in India.</p>
+
+</div>
+
+<h2 style="text-align:center">Our Services</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+        {% load static %}
+      <img src="{% static 'css/pre.png' %}" style="width:100%">
+      <div class="container">
+        <h2>PREPAID</h2>
+        <p>Prepaid plan is a mobile network plan where you pay the money upfront and then enjoy the benefits of the plan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+        {% load static %}
+      <img src="{% static 'css/pre.png' %}"  style="width:100%">
+     <div class="container">
+        <h2>POSTPAID</h2>
+        <p>Postpaid mobile plans are usually set up as a contract over 12 months, sometimes 24 months, featuring an on going auto-renew that renews on a month to month basis.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

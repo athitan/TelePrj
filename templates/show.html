@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/pro.css' %}"/>
+    <style>
+        table,th,td
+        {
+        background-color:#FF9900;;
+        border: solid Black;
+        border-collapse: collapse;
+        border-width: 5px;
+        }
+        button{
+        background-color:white;
+        color:black;
+        }
+    </style>
+</head>
+<body>
+<h1>Prepaid</h1>
+<table class="center">
+    <tr>
+        <th>PlanName</th>
+        <th>calls</th>
+        <th>Validity</th>
+        <th>Data</th>
+        <th>Amount</th>
+        <th>Actions</th>
+    </tr>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.pname}}</td>
+        <td>{{i.calls}}</td>
+        <td>{{i.validity}}</td>
+        <td>{{i.data}}</td>
+        <td>{{i.amount}}</td>
+        <td><a href="/update/{{i.id}}">update</a></td>
+        <td><a href="/delete/{{i.id}}">delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+<button><a href="/new">add plan</a></button><br>
+<button><a href="/logout">logout</a></button><br>
+For further changes <br>
+<a href="">click here</a><br>
+</body>
+</html>

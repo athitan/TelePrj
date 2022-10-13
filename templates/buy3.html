@@ -1,0 +1,45 @@
+{% extends 'navbar.html' %}
+<html>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/pay.css' %}"/>
+</head>
+{% endblock %}
+{% block body %}
+<body>
+<h1>PROCEED WITH PAYMENT</h1>
+<h2>Select payment method</h2><br>
+<div class="custom-select" style="width:200px;">Select the bank:
+    <select>
+        <option value="0">Choose </option>
+        <option value="1">SBI</option>
+        <option value="2">ICICI</option>
+        <option value="3">HDFC</option>
+        <option value="4">Axis</option>
+        <option value="5">CUB</option>
+    </select>
+</div><br><br>
+
+<div class="custom-select" style="width:200px;">
+    <h2>Select mode of Payment</h2><br>
+    <select>
+        <option value="0">Choose </option>
+        <option value="1">Credit card</option>
+        <option value="2">Debit card</option>
+        <option value="3">Netbanking</option>
+    </select>
+</div><br><br>
+<button style="background-color:#142027"><a href="\new5">Pay Now</a></button><br>
+</body>
+{% endblock %}
+</html>
+
+

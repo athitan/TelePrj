@@ -1,0 +1,73 @@
+{% extends 'navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Prepaid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/des.css' %}"/>
+    <style>
+        p,span{
+        color:black;
+        font-size:20px;
+        }
+        h5{
+        color:white;
+        font-size:20px;
+        }
+    </style>
+</head>
+{% endblock %}
+{% block body %}
+<body>
+
+<div class="container">
+<h1  align="center" class="border border-2 text-white" style="background-color:#264348;color:white">Postpaid plans for Voizfonica </h1>
+  <h2 align="center" >RECOMMENDED PACKS</h2>
+<div class="row">
+{% for item in items %}
+<section class="container d-fle">
+  <div class="row" style="position:relative;top:0.5rem">
+    <div class="container card col" style="width:100rem;background-color:#c4c3d0;color:black">
+      <h1 style="background-color:grey">{{item.pname}}</h1>
+        <div class="row">
+      <span class="col-xs-3">
+      <p>{{item.calls}}</p>
+      <p>Calls</p>
+    </span>
+      <span class="col-xs-3">
+        <p> {{item.data}}</p>
+        <p>Data</p>
+      </span>
+      <span class="col-xs-3">
+        <p>{{item.validity}}</p>
+        <p>Validity</p>
+      </span>
+        <span class="col-xs-3">
+        <p> {{item.amount}}</p>
+        <p>Rs</p>
+        </span>
+
+    </div>
+
+    </div>
+  </div>
+</section><br>
+ {% endfor %}
+</div><br>
+    <h1  align="center" class="border border-2 text-white" style="background-color:#264348;color:white">
+    {% load static %}
+        <img style="border:5px solid black" src="{% static 'css/sim.png' %}" height="250" width="250"/><br>
+    For purchasing your new sim <br><a href="http://127.0.0.1:8000/Postpaidbuysim" style="color:red">click here</a> </h1>
+
+    <h1  align="center" class="border border-2 text-white" style="background-color:#c4c3d0;color:black">For paying bill<br>
+        <a href="/postpaidbillpayment" style="color:red">click here</a> </h1>
+</div>
+</body>
+{% endblock%}
+</html>

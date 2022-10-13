@@ -1,0 +1,77 @@
+<html>
+<head>
+<title> VoizFonica </title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   {% load static %}
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}"/>
+    <style>
+    .footer {
+    position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#142027;
+  color:white;
+  text-align: center;
+}
+li,a{
+  color:white;
+  }
+
+    </style>
+
+
+{% block head %}
+{% endblock %}
+</head>
+
+<nav class="navbar navbar-inverse" style="background-color:#264348;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+          {% load static %}
+    <img src="{% static 'css/img123.jfif' %}" height="30px" width="100px"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        {% if request.session.name == None %}
+      <li class="nav-item"><a class="nav-link" href="http://localhost:4200/home1" style="color:white">Home</a></li>
+        {% elif request.session.name != None %}
+      <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/home1" style="color:white">Home</a></li>
+        {% endif %}
+             <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/prepaid" style="color:white">Prepaid</a></li>
+             <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/postpaid" style="color:white"> Postpaid</a></li>
+            <li class="nav-item"><a class="nav-link" href="/feedback" style="color:white">Feedback</a></li>
+            <li class="nav-item"><a class="nav-link" href="/queries" style="color:white">Queries</a></li>
+             <li class="nav-item"><a class="nav-link" href="#abt" style="color:white">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/myprofile" style="color:white">My Profile</a></li>
+        {% if request.session.name == None %}
+        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/login" style="color:white">Login</a></li>
+        {% elif request.session.name != None %}
+        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/logout" style="color:white">Logout</a></li>
+         {% endif %}
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+{% block body %}
+{% endblock %}
+ </div>
+
+    <footer class="footer" style="position:relative;top:0rem">
+
+        <p style="color:white;font-size:15px;">Contact Us:<br>
+          email-id: voizfonica@yahoo.co.in<br>
+          phone: 044-23987619<br>
+          © 2018 VoizFonica</p>
+
+    </footer>
+
+
+</html>

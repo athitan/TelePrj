@@ -1,0 +1,76 @@
+{% extends 'navbar.html' %}
+<!doctype html>
+<html lang="en">
+{% block head %}
+<head>
+  <title>Document</title>
+    <style>
+    p,span{
+        color:black;
+        font-size:20px;
+        }
+  </style>
+</head>
+{% endblock %}
+{% block body %}
+<h1  align="center" class="border border-2 text-white" style="background-color:#264348;color:white;">MY PROFILE </h1>
+<body>
+<div class="container">
+<div class="row">
+{% for item in o %}
+<section class="container d-fle">
+  <div class="row" style="position:relative;top:0.5rem">
+    <div class="container card col" style="width:100rem;background-color:#c4c3d0;color:black">
+        <br>
+        {% load static %}
+        <img src="{% static 'css/profile.png' %}" height="20%" width="20%">
+      <h1 style="background-color:grey">{{item.cname}}</h1>
+        <div class="row">
+      <span class="col-xs-3">
+      <p>{{item.mobile}}</p>
+      <p>MOBILE NUMBER</p>
+    </span>
+      <span class="col-xs-3">
+        <p>{{item.email}}</p>
+        <p>Email ID</p>
+      </span>
+          <span class="col-xs-3">
+        <p>{{item.address}}</p>
+        <p>Address</p>
+      </span>
+   <span class="col-xs-3">
+        <p>Postpaid</p>
+        <p>Plan</p>
+      </span>
+    </div>
+
+    </div>
+  </div>
+</section><br>
+ {% endfor %}
+      {% for item in o %}
+<section class="container d-fle">
+  <div class="row" style="position:relative;top:0.5rem">
+    <div class="container card col" style="width:100rem;background-color:#c4c3d0;color:black">
+      <h1 style="background-color:grey">Active Plan</h1>
+        <div class="row">
+      <span class="col-xs-3">
+          <p>Plan Name</p>
+      <p>{{item.Amount}}</p>
+    </span>
+            <span class="col-xs-6">
+<p>Last Bill Paid on</p>
+<p>{{item.date}}</p>
+</span>
+          </div>
+      </div>
+    </div>
+</section>
+   {% endfor %}
+</div><br>
+  </div>
+<br>
+
+</body>
+{% endblock %}
+</html>

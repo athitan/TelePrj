@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New 3</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/abc.css' %}"/>
+</head>
+<body>
+<form method="POST" style="width:30%;width=50vw;margin-left:35vw;">
+  {% csrf_token %}
+    {{ form.as_p }}
+  <input type="submit" name="Add" style="background-color:#142027;color:white">
+</form>
+</body>
+</html>

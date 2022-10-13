@@ -1,0 +1,53 @@
+{% extends 'navbar.html' %}
+<!doctype html>
+<html lang="en">
+{% block head %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Document</title>
+  <style>
+  p{
+    font-size:20px;
+    }
+  </style>
+</head>
+{% endblock %}
+{% block body %}
+<body>
+<div class="container">
+<h1  align="center" class="border border-2 text-white" style="background-color:#264348;color:white">Invoice for Postpaid </h1>
+<div class="row">
+{% for item in o %}
+<section class="container d-fle">
+  <div class="row" style="position:relative;top:0.5rem">
+    <div class="container card col" style="width:100rem;background-color:#c4c3d0;color:black">
+      <h1 style="background-color:grey">{{item.cname}}</h1>
+        <div class="row">
+      <span class="col-xs-3">
+      <p>{{item.mobile}}</p>
+      <p>MOBILE NUMBER</p>
+    </span>
+      <span class="col-xs-3">
+        <p>Plan Activated</p>
+        <p>Validity</p>
+      </span>
+    <span class="col-xs-3">
+        <p>{{item.Amount}}</p>
+        <p>Plan Name</p>
+      </span>
+    </div>
+
+    </div>
+  </div>
+</section><br>
+ {% endfor %}
+  <center>
+    <buttton style="background-color:#142027;color:white;font-size:30px;text-align:center"><a href="/Billpayment" style="color:white">PAY NOW</a></buttton></center>
+</div><br>
+  </div>
+<br>
+</body>
+<br><br><br><br><br>
+{% endblock %}
+</html>
